@@ -1,0 +1,438 @@
+<title>RightPickr 隐私政策</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Jost:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+
+<style>
+  /* Palette lifted from the app's own theme.js — cream ground, warm ink,
+     bright yellow accent, olive green for anything that means "protected". */
+  :root {
+    --ground: #FFF8E7;
+    --surface: #FFFFFF;
+    --ink: #14120E;
+    --ink-2: rgba(20, 18, 14, .62);
+    --ink-3: rgba(20, 18, 14, .45);
+    --rule: rgba(20, 18, 14, .12);
+    --rule-strong: rgba(20, 18, 14, .22);
+    --yellow: #FFD400;
+    --yellow-ink: #8A6A00;
+    --green: #3F6B4A;
+    --orange: #D2621B;
+    --shade: #FDF0D0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ground: #17150F;
+      --surface: #201D15;
+      --ink: #F6EFDD;
+      --ink-2: rgba(246, 239, 221, .66);
+      --ink-3: rgba(246, 239, 221, .46);
+      --rule: rgba(246, 239, 221, .14);
+      --rule-strong: rgba(246, 239, 221, .26);
+      --yellow: #FFD400;
+      --yellow-ink: #FFD965;
+      --green: #8FBE9C;
+      --orange: #F2924F;
+      --shade: #241F14;
+    }
+  }
+  :root[data-theme="dark"] {
+    --ground: #17150F;
+    --surface: #201D15;
+    --ink: #F6EFDD;
+    --ink-2: rgba(246, 239, 221, .66);
+    --ink-3: rgba(246, 239, 221, .46);
+    --rule: rgba(246, 239, 221, .14);
+    --rule-strong: rgba(246, 239, 221, .26);
+    --yellow: #FFD400;
+    --yellow-ink: #FFD965;
+    --green: #8FBE9C;
+    --orange: #F2924F;
+    --shade: #241F14;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.75rem;
+  }
+
+  .mast { display: flex; flex-direction: column; gap: .75rem; }
+  .eyebrow {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+  }
+  h1 {
+    font-family: Jost, "Noto Sans SC", sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .stamp {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: .78rem;
+    color: var(--ink-3);
+  }
+
+  .lede {
+    background: var(--shade);
+    border: 1px solid var(--rule);
+    border-radius: .75rem;
+    padding: 1.15rem 1.25rem;
+    font-size: .97rem;
+    color: var(--ink-2);
+  }
+  .lede strong { color: var(--ink); font-weight: 500; }
+
+  section { display: flex; flex-direction: column; gap: .9rem; }
+
+  h2 {
+    font-family: Jost, "Noto Sans SC", sans-serif;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: .005em;
+    margin: 0;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--rule-strong);
+    text-wrap: balance;
+  }
+  h3 {
+    font-family: Jost, "Noto Sans SC", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin: .5rem 0 0;
+  }
+  p { margin: 0; }
+  p + p { margin-top: .55rem; }
+
+  ul { margin: 0; padding-left: 1.15rem; display: flex; flex-direction: column; gap: .45rem; }
+  li::marker { color: var(--ink-3); }
+
+  .scroller { overflow-x: auto; border: 1px solid var(--rule); border-radius: .75rem; background: var(--surface); }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; min-width: 30rem; }
+  thead th {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-weight: 500;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    text-align: left;
+    padding: .85rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    white-space: nowrap;
+  }
+  td { padding: .8rem 1rem; vertical-align: top; border-bottom: 1px solid var(--rule); }
+  tbody tr:last-child td { border-bottom: 0; }
+  td:first-child { font-weight: 500; white-space: nowrap; }
+
+  /* Who can see a given row is the substance of this document, so it is
+     marked in form as well as words. */
+  .who { display: inline-flex; align-items: center; gap: .4rem; font-size: .86rem; }
+  .who::before { content: ""; width: .5rem; height: .5rem; border-radius: 999px; flex: none; }
+  .who.open::before { background: var(--yellow); }
+  .who.narrow::before { background: var(--green); }
+  .who.never::before { background: var(--orange); }
+  .who.open { color: var(--yellow-ink); }
+  .who.narrow { color: var(--green); }
+  .who.never { color: var(--orange); }
+
+  .note {
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: .78rem;
+    line-height: 1.65;
+    color: var(--ink-3);
+  }
+
+  .divider { height: 1px; background: var(--rule-strong); border: 0; margin: 1rem 0 0; }
+
+  .lang {
+    display: inline-flex;
+    gap: .5rem;
+    font-family: "DM Mono", ui-monospace, monospace;
+    font-size: .78rem;
+  }
+  .lang a {
+    color: var(--ink-2);
+    text-decoration: none;
+    border: 1px solid var(--rule-strong);
+    border-radius: 999px;
+    padding: .3rem .8rem;
+  }
+  .lang a:hover, .lang a:focus-visible { color: var(--ink); border-color: var(--ink); }
+
+  a { color: var(--orange); }
+  :focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; border-radius: 3px; }
+
+  .fill {
+    background: var(--yellow);
+    color: #14120E;
+    padding: 0 .3rem;
+    border-radius: .2rem;
+    font-weight: 500;
+  }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="eyebrow">RightPickr</div>
+    <h1>隐私政策</h1>
+    <div class="stamp">最后更新：2026 年 8 月 28 日</div>
+    <div class="lang">
+      <a href="#zh">中文</a>
+      <a href="#en">English</a>
+    </div>
+  </header>
+
+  <p class="lede" id="zh">
+    RightPickr 是一个邻里自取应用：看看步行能到的邻居在送什么、卖什么，右滑锁定，走过去当面拿。
+    <strong>这个应用不经手任何钱款</strong>，也不做广告、不卖数据、不接第三方追踪 SDK。
+    下面写的是它实际存了什么、谁能看到，以及你能怎么控制。
+  </p>
+
+  <section>
+    <h2>我们保存什么</h2>
+    <ul>
+      <li><strong>邮箱</strong> —— 用来登录。我们发一次性验证码，不设密码。</li>
+      <li><strong>大致位置</strong> —— 用来判断哪些东西你走得到。</li>
+      <li><strong>你发布的内容</strong> —— 物品照片、标题、描述、取货地点和时间段。</li>
+      <li><strong>个人资料</strong> —— 昵称，以及你自己选择填写的头像、一句话介绍、大概位置。</li>
+      <li><strong>消息</strong> —— 你和邻居之间的对话。</li>
+      <li><strong>收款方式</strong> —— 如果你填了 Venmo 或 Zelle 账号。</li>
+      <li><strong>你跳过了哪些卡片</strong> —— 这样同一件东西不会反复出现。</li>
+      <li><strong>举报和屏蔽记录</strong> —— 用来处理骚扰和违规内容。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>我们不做的事</h2>
+    <ul>
+      <li>不处理支付。买卖双方当面用现金或自己的转账应用结算，我们不碰这笔钱，也看不到它有没有发生。</li>
+      <li>不投广告，不出售或出租你的数据，不做跨应用追踪，不接第三方分析 SDK。</li>
+      <li>不在后台获取位置。只有你打开应用并主动允许时才读一次。</li>
+      <li>不读取通讯录，不要手机号。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>谁能看到什么</h2>
+    <p>访问权限不是靠界面藏起来的，是数据库层面的行级安全策略在管。下面每一行都是一条真实的规则。</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>内容</th><th>可见范围</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>昵称、头像</td>
+            <td><span class="who open">任何登录用户</span></td>
+          </tr>
+          <tr>
+            <td>一句话介绍、大概位置</td>
+            <td><span class="who narrow">只在你打开开关时可见</span><br>
+              <span class="note">关掉的字段不会写进别人能读到的那张表，只留在只有你能读的地方。</span></td>
+          </tr>
+          <tr>
+            <td>物品的大致位置</td>
+            <td><span class="who open">浏览的人都能看到</span><br>
+              <span class="note">公开的坐标是随机偏移过的，和真实地点差 60–140 米。</span></td>
+          </tr>
+          <tr>
+            <td>确切取货地址</td>
+            <td><span class="who narrow">只有当前锁定这件东西的人</span></td>
+          </tr>
+          <tr>
+            <td>Venmo / Zelle 账号</td>
+            <td><span class="who narrow">只有当前锁定这件东西的人</span></td>
+          </tr>
+          <tr>
+            <td>取货码</td>
+            <td><span class="who narrow">只有取货的人</span><br>
+              <span class="note">卖家看不到它 —— 它存在的意义就是当面由买家出示。</span></td>
+          </tr>
+          <tr>
+            <td>消息</td>
+            <td><span class="who narrow">只有你们两个人</span></td>
+          </tr>
+          <tr>
+            <td>你的精确 GPS 坐标</td>
+            <td><span class="who never">不保存</span><br>
+              <span class="note">只在你的设备上用来算距离；存进数据库的永远是偏移过的点。</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>我们用到的第三方</h2>
+    <ul>
+      <li><strong>Supabase</strong>（美国区）—— 数据库、登录和照片存储。你的数据存在这里。</li>
+      <li><strong>Mapbox</strong> —— 地图图片。别人的物品发给 Mapbox 的是偏移过的坐标；但当地图显示的是<em>你自己</em>的位置时（设置范围、手动挪动位置），发过去的就是你当时的坐标。</li>
+      <li><strong>邮件服务</strong> —— 只用来把登录验证码发到你的邮箱。</li>
+    </ul>
+    <p class="note">这三家各自有自己的隐私政策，处理数据时受其约束。</p>
+  </section>
+
+  <section>
+    <h2>你可以做什么</h2>
+    <ul>
+      <li><strong>注销账号</strong> —— 应用内「设置 → 注销账号」。账号和挂在它下面的东西（发布、消息、照片、收款方式）会一并删除，不用发邮件申请。</li>
+      <li><strong>关掉介绍和大概位置</strong> —— 关掉之后它们不再存在于别人能读到的地方。</li>
+      <li><strong>屏蔽某个人</strong> —— 互相看不到对方的东西和消息，随时可以解除。</li>
+      <li><strong>不注册也能用</strong> —— 可以只看、只跳过。不注册就不能发布、锁定或发消息，因为这些都要当面见到人。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>保留多久</h2>
+    <p>内容会一直保留到你删除它，或者你注销账号为止。注销是立即生效的删除，不是标记为停用。</p>
+    <p>举报记录在你注销之后仍会保留一段时间 —— 否则被举报的人只要删号重注册就能绕过处理。</p>
+  </section>
+
+  <section>
+    <h2>儿童</h2>
+    <p>RightPickr 不面向 13 岁以下儿童，我们也不会有意收集他们的信息。</p>
+  </section>
+
+  <section>
+    <h2>变更与联系</h2>
+    <p>这份政策如有实质变更，页面顶部的日期会更新。</p>
+    <p>有问题或要求删除数据，联系：<span class="fill">在这里填你的联系邮箱</span></p>
+  </section>
+
+  <hr class="divider">
+
+  <header class="mast" id="en">
+    <div class="eyebrow">RightPickr</div>
+    <h1>Privacy Policy</h1>
+    <div class="stamp">Last updated: 28 August 2026</div>
+  </header>
+
+  <p class="lede">
+    RightPickr is a neighbourhood pickup app: see what neighbours within walking distance are giving away or selling,
+    swipe right to hold it, then walk over and collect it in person.
+    <strong>The app never handles money</strong>, shows no advertising, sells no data, and carries no third-party
+    tracking SDKs. What follows is what it actually stores, who can see it, and what you control.
+  </p>
+
+  <section>
+    <h2>What we store</h2>
+    <ul>
+      <li><strong>Your email</strong> — for signing in. We send a one-time code; there is no password.</li>
+      <li><strong>An approximate location</strong> — to work out what is within walking distance of you.</li>
+      <li><strong>What you post</strong> — item photos, title, description, pickup spot and time windows.</li>
+      <li><strong>Your profile</strong> — display name, plus the photo, one-line bio and rough area you choose to add.</li>
+      <li><strong>Messages</strong> — conversations between you and a neighbour.</li>
+      <li><strong>Payment handles</strong> — your Venmo or Zelle handle, if you add one.</li>
+      <li><strong>Which cards you passed on</strong> — so the same item does not keep coming back.</li>
+      <li><strong>Reports and blocks</strong> — to act on harassment and prohibited content.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What we do not do</h2>
+    <ul>
+      <li>No payment processing. People settle up in person, in cash or through their own transfer app. We never touch the money and cannot see whether it changed hands.</li>
+      <li>No advertising, no selling or renting your data, no cross-app tracking, no third-party analytics SDKs.</li>
+      <li>No background location. Location is read once, while the app is open, after you allow it.</li>
+      <li>No access to your contacts, and we do not ask for a phone number.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Who can see what</h2>
+    <p>Access is enforced by row-level security rules in the database, not by hiding things in the interface. Each line below is a real rule.</p>
+    <div class="scroller">
+      <table>
+        <thead>
+          <tr><th>Data</th><th>Visible to</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Display name, photo</td><td><span class="who open">Any signed-in neighbour</span></td></tr>
+          <tr>
+            <td>Bio, rough area</td>
+            <td><span class="who narrow">Only if you switch it on</span><br>
+              <span class="note">A field switched off is never written to the table other people can read — it stays where only you can see it.</span></td>
+          </tr>
+          <tr>
+            <td>An item's approximate spot</td>
+            <td><span class="who open">Anyone browsing</span><br>
+              <span class="note">The published point is displaced 60–140 m in a random direction.</span></td>
+          </tr>
+          <tr><td>The exact pickup address</td><td><span class="who narrow">Only the person currently holding the item</span></td></tr>
+          <tr><td>Venmo / Zelle handle</td><td><span class="who narrow">Only the person currently holding the item</span></td></tr>
+          <tr>
+            <td>Pickup code</td>
+            <td><span class="who narrow">Only the person collecting</span><br>
+              <span class="note">The seller cannot see it — the point of the code is that the buyer shows it at the handover.</span></td>
+          </tr>
+          <tr><td>Messages</td><td><span class="who narrow">Only the two of you</span></td></tr>
+          <tr>
+            <td>Your precise GPS position</td>
+            <td><span class="who never">Not stored</span><br>
+              <span class="note">Used on your device to measure distance; what reaches the database is always the displaced point.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Third parties we use</h2>
+    <ul>
+      <li><strong>Supabase</strong> (US region) — database, sign-in and photo storage. This is where your data lives.</li>
+      <li><strong>Mapbox</strong> — map images. Other people's listings are sent as displaced coordinates; when the map is showing <em>your own</em> position (setting your radius, moving your location by hand), your coordinates are what gets sent.</li>
+      <li><strong>An email provider</strong> — used only to deliver your sign-in code.</li>
+    </ul>
+    <p class="note">Each of these has its own privacy policy and is bound by it when handling data.</p>
+  </section>
+
+  <section>
+    <h2>What you control</h2>
+    <ul>
+      <li><strong>Delete your account</strong> — in the app, Settings → Delete account. The account and everything attached to it (listings, messages, photos, payment handles) goes with it. No email request needed.</li>
+      <li><strong>Switch off your bio and rough area</strong> — once off, they no longer exist anywhere others can read.</li>
+      <li><strong>Block someone</strong> — you stop seeing each other's things and messages. Reversible at any time.</li>
+      <li><strong>Browse without an account</strong> — you can look and skip. Posting, holding and messaging need an account, because all three mean meeting someone in person.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How long we keep it</h2>
+    <p>Content stays until you delete it or delete your account. Deletion is immediate removal, not deactivation.</p>
+    <p>Reports outlive the account they concern — otherwise anyone reported could clear the record by deleting and signing up again.</p>
+  </section>
+
+  <section>
+    <h2>Children</h2>
+    <p>RightPickr is not directed to children under 13, and we do not knowingly collect their information.</p>
+  </section>
+
+  <section>
+    <h2>Changes and contact</h2>
+    <p>If this policy changes in substance, the date at the top changes with it.</p>
+    <p>Questions, or a request to delete your data: <span class="fill">put your contact email here</span></p>
+  </section>
+</div>
