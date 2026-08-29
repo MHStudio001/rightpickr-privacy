@@ -192,7 +192,7 @@
   <header class="mast">
     <div class="eyebrow">RightPickr</div>
     <h1>隐私政策</h1>
-    <div class="stamp">最后更新：2026 年 8 月 28 日</div>
+    <div class="stamp">最后更新：2026 年 8 月 29 日</div>
     <div class="lang">
       <a href="#zh">中文</a>
       <a href="#en">English</a>
@@ -254,7 +254,8 @@
           </tr>
           <tr>
             <td>确切取货地址</td>
-            <td><span class="who narrow">只有当前锁定这件东西的人</span></td>
+            <td><span class="who narrow">只有当前锁定这件东西的人</span><br>
+              <span class="note">给到之后，它也会用来画那个人的地图、以及在他们点开导航时交给地图应用。</span></td>
           </tr>
           <tr>
             <td>Venmo / Zelle 账号</td>
@@ -283,7 +284,8 @@
     <h2>我们用到的第三方</h2>
     <ul>
       <li><strong>Supabase</strong>（美国区）—— 数据库、登录和照片存储。你的数据存在这里。</li>
-      <li><strong>Mapbox</strong> —— 地图图片。别人的物品发给 Mapbox 的是偏移过的坐标；但当地图显示的是<em>你自己</em>的位置时（设置范围、手动挪动位置），发过去的就是你当时的坐标。</li>
+      <li><strong>Mapbox</strong> —— 地图图片。别人的物品发给 Mapbox 的是偏移过的坐标；但有两种情况发过去的是真实坐标：地图显示<em>你自己</em>的位置时（设置范围、手动挪动位置），以及你锁定了某件东西之后 —— 那时地图钉的是确切取货点。</li>
+      <li><strong>你打开的地图应用</strong>（Apple 地图 / Google 地图）—— 只有在你主动点「在地图中打开」时。传过去的是确切取货地址，因为把偏移过的点当导航目的地会把你带到错的门口。</li>
       <li><strong>邮件服务</strong> —— 只用来把登录验证码发到你的邮箱。</li>
     </ul>
     <p class="note">这三家各自有自己的隐私政策，处理数据时受其约束。</p>
@@ -321,7 +323,7 @@
   <header class="mast" id="en">
     <div class="eyebrow">RightPickr</div>
     <h1>Privacy Policy</h1>
-    <div class="stamp">Last updated: 28 August 2026</div>
+    <div class="stamp">Last updated: 29 August 2026</div>
   </header>
 
   <p class="lede">
@@ -375,7 +377,11 @@
             <td><span class="who open">Anyone browsing</span><br>
               <span class="note">The published point is displaced 60–140 m in a random direction.</span></td>
           </tr>
-          <tr><td>The exact pickup address</td><td><span class="who narrow">Only the person currently holding the item</span></td></tr>
+          <tr>
+            <td>The exact pickup address</td>
+            <td><span class="who narrow">Only the person currently holding the item</span><br>
+              <span class="note">Once released, it is also used to draw that person's map and handed to their map app if they open directions.</span></td>
+          </tr>
           <tr><td>Venmo / Zelle handle</td><td><span class="who narrow">Only the person currently holding the item</span></td></tr>
           <tr>
             <td>Pickup code</td>
@@ -397,7 +403,8 @@
     <h2>Third parties we use</h2>
     <ul>
       <li><strong>Supabase</strong> (US region) — database, sign-in and photo storage. This is where your data lives.</li>
-      <li><strong>Mapbox</strong> — map images. Other people's listings are sent as displaced coordinates; when the map is showing <em>your own</em> position (setting your radius, moving your location by hand), your coordinates are what gets sent.</li>
+      <li><strong>Mapbox</strong> — map images. Other people's listings are sent as displaced coordinates. Two cases send real ones: when the map is showing <em>your own</em> position (setting your radius, moving your location by hand), and once you are holding an item, when the map pins its exact pickup point.</li>
+      <li><strong>Whichever map app you open</strong> (Apple Maps, Google Maps) — only when you tap "Open in Maps". It receives the exact pickup address, because routing you to a deliberately displaced point would take you to the wrong doorway.</li>
       <li><strong>An email provider</strong> — used only to deliver your sign-in code.</li>
     </ul>
     <p class="note">Each of these has its own privacy policy and is bound by it when handling data.</p>
