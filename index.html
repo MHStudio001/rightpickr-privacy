@@ -192,7 +192,7 @@
   <header class="mast">
     <div class="eyebrow">RightPickr</div>
     <h1>隐私政策</h1>
-    <div class="stamp">最后更新：2026 年 8 月 29 日</div>
+    <div class="stamp">最后更新：2026 年 9 月 21 日</div>
     <div class="lang">
       <a href="#zh">中文</a>
       <a href="#en">English</a>
@@ -200,7 +200,7 @@
   </header>
 
   <p class="lede" id="zh">
-    RightPickr 是一个邻里自取应用：看看步行能到的邻居在送什么、卖什么，右滑锁定，走过去当面拿。
+    RightPickr 是一个邻里自取应用：看看步行能到的邻居在送什么、卖什么，右滑捡下，走过去当面拿。
     <strong>这个应用不经手任何钱款</strong>，也不做广告、不卖数据、不接第三方追踪 SDK。
     下面写的是它实际存了什么、谁能看到，以及你能怎么控制。
   </p>
@@ -254,12 +254,12 @@
           </tr>
           <tr>
             <td>确切取货地址</td>
-            <td><span class="who narrow">只有当前锁定这件东西的人</span><br>
+            <td><span class="who narrow">只有捡下这件东西的人</span><br>
               <span class="note">给到之后，它也会用来画那个人的地图、以及在他们点开导航时交给地图应用。</span></td>
           </tr>
           <tr>
             <td>Venmo / Zelle 账号</td>
-            <td><span class="who narrow">只有当前锁定这件东西的人</span></td>
+            <td><span class="who narrow">只有捡下这件东西的人</span></td>
           </tr>
           <tr>
             <td>取货码</td>
@@ -284,7 +284,7 @@
     <h2>我们用到的第三方</h2>
     <ul>
       <li><strong>Supabase</strong>（美国区）—— 数据库、登录和照片存储。你的数据存在这里。</li>
-      <li><strong>Mapbox</strong> —— 地图图片和地名。别人的物品发给 Mapbox 的是偏移过的坐标；但有三种情况发过去的是真实坐标：地图显示<em>你自己</em>的位置时（设置范围、手动挪动位置）；你发布物品时 —— 用来把坐标换成一个街区名，卡片上公开显示的就是这个名字，不是你自己填的那行地址；以及你锁定了某件东西之后 —— 那时地图钉的是确切取货点。</li>
+      <li><strong>Mapbox</strong> —— 地图图片和地名。别人的物品发给 Mapbox 的是偏移过的坐标；但有三种情况发过去的是真实坐标：地图显示<em>你自己</em>的位置时（设置范围、手动挪动位置）；你发布物品时 —— 用来把坐标换成一个街区名，卡片上公开显示的就是这个名字，不是你自己填的那行地址；以及你捡下某件东西之后 —— 那时地图钉的是确切取货点。</li>
       <li><strong>你打开的地图应用</strong>（Apple 地图 / Google 地图）—— 只有在你主动点「在地图中打开」时。传过去的是确切取货地址，因为把偏移过的点当导航目的地会把你带到错的门口。</li>
       <li><strong>邮件服务</strong> —— 只用来把登录验证码发到你的邮箱。</li>
     </ul>
@@ -297,7 +297,7 @@
       <li><strong>注销账号</strong> —— 应用内「设置 → 注销账号」。账号和挂在它下面的东西（发布、消息、照片、收款方式）会一并删除，不用发邮件申请。</li>
       <li><strong>关掉介绍和大概位置</strong> —— 关掉之后它们不再存在于别人能读到的地方。</li>
       <li><strong>屏蔽某个人</strong> —— 互相看不到对方的东西和消息，随时可以解除。</li>
-      <li><strong>不注册也能用</strong> —— 可以只看、只跳过。不注册就不能发布、锁定或发消息，因为这些都要当面见到人。</li>
+      <li><strong>不注册也能用</strong> —— 可以只看、只跳过。不注册就不能发布、捡下或发消息，因为这些都要当面见到人。</li>
     </ul>
   </section>
 
@@ -326,12 +326,12 @@
   <header class="mast" id="en">
     <div class="eyebrow">RightPickr</div>
     <h1>Privacy Policy</h1>
-    <div class="stamp">Last updated: 29 August 2026</div>
+    <div class="stamp">Last updated: 21 September 2026</div>
   </header>
 
   <p class="lede">
     RightPickr is a neighbourhood pickup app: see what neighbours within walking distance are giving away or selling,
-    swipe right to hold it, then walk over and collect it in person.
+    swipe right to take it, then walk over and collect it in person.
     <strong>The app never handles money</strong>, shows no advertising, sells no data, and carries no third-party
     tracking SDKs. What follows is what it actually stores, who can see it, and what you control.
   </p>
@@ -382,10 +382,10 @@
           </tr>
           <tr>
             <td>The exact pickup address</td>
-            <td><span class="who narrow">Only the person currently holding the item</span><br>
+            <td><span class="who narrow">Only the person collecting the item</span><br>
               <span class="note">Once released, it is also used to draw that person's map and handed to their map app if they open directions.</span></td>
           </tr>
-          <tr><td>Venmo / Zelle handle</td><td><span class="who narrow">Only the person currently holding the item</span></td></tr>
+          <tr><td>Venmo / Zelle handle</td><td><span class="who narrow">Only the person collecting the item</span></td></tr>
           <tr>
             <td>Pickup code</td>
             <td><span class="who narrow">Only the person collecting</span><br>
@@ -406,7 +406,7 @@
     <h2>Third parties we use</h2>
     <ul>
       <li><strong>Supabase</strong> (US region) — database, sign-in and photo storage. This is where your data lives.</li>
-      <li><strong>Mapbox</strong> — map images and place names. Other people's listings are sent as displaced coordinates. Three cases send real ones: when the map is showing <em>your own</em> position (setting your radius, moving your location by hand); when you post something, to turn the coordinates into a neighbourhood name — that name is what appears publicly on the card, not the address you typed; and once you are holding an item, when the map pins its exact pickup point.</li>
+      <li><strong>Mapbox</strong> — map images and place names. Other people's listings are sent as displaced coordinates. Three cases send real ones: when the map is showing <em>your own</em> position (setting your radius, moving your location by hand); when you post something, to turn the coordinates into a neighbourhood name — that name is what appears publicly on the card, not the address you typed; and once you have taken an item, when the map pins its exact pickup point.</li>
       <li><strong>Whichever map app you open</strong> (Apple Maps, Google Maps) — only when you tap "Open in Maps". It receives the exact pickup address, because routing you to a deliberately displaced point would take you to the wrong doorway.</li>
       <li><strong>An email provider</strong> — used only to deliver your sign-in code.</li>
     </ul>
